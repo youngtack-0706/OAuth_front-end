@@ -15,3 +15,8 @@ quasar dev
 ```bash
 quasar build
 ```
+
+### 로그인기능은 아래주소로 이동
+```bash
+/login
+```
