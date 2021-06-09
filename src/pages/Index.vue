@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="$store.state.user != null">
       유저 이름:{{$store.state.user.nickname}}<br>
       유저 메일:{{$store.state.user.email}}<br>
       유저 생일:{{$store.state.user.birthday}}<br>
@@ -8,8 +8,13 @@
       유저 연령대: {{$store.state.user.age}}<br>
 
       count : {{this.$store.state.count}}<br>
+
       <input type="button" @click="increment()" value="increment"/>
       <input type="button" @click="decrement()" value="decrement"/>
+  </div>
+  <div v-else>
+      <q-btn @click="goLogin()" label="로그인">
+      </q-btn>
   </div>
 </template>
 <script>
@@ -28,7 +33,10 @@
       },
       async decrement() {
         this.$store.commit('decrement')
-      }
+      },
+      goLogin(){
+        this.$router.push('/login');
+      },
     }
   }
 </script>

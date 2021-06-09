@@ -14,6 +14,7 @@ export const store =  new Vuex.Store({
         // gender:'',
         // profileImage:'',
         user:{},
+        atoken: '',
         count: 0,
     },
     // getters:{
@@ -57,6 +58,9 @@ export const store =  new Vuex.Store({
         // },
         setUser(state, user) {
             state.user = user;
+        },
+        setAtoken(state, atoken){
+            state.atoken = atoken
         },
         increment(state){
             state.count++
